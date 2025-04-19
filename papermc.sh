@@ -6,8 +6,8 @@
 # Set nullstrings back to 'latest'
 #: ${MC_VERSION:='latest'}
 #: ${PAPER_BUILD:='latest'}
-: ${MC_VERSION:='1.21.5'}
-: ${PAPER_BUILD:='1.21.5-22'}
+MC_VERSION='1.21.5'
+PAPER_BUILD='22'
 
 
 # 解析命名参数
