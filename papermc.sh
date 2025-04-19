@@ -6,10 +6,32 @@ cd papermc
 # Set nullstrings back to 'latest'
 : ${MC_VERSION:='latest'}
 : ${PAPER_BUILD:='latest'}
+# 解析命名参数
+while [[ "$#" -gt 0 ]]; do
+    case "$1" in
+        --mcversion)
+            MC_VERSION="$2"
+            shift 2
+            ;;
+        --paperversion)
+            PAPER_BUILD="$2"
+            shift 2
+            ;;
+        *)
+            echo "Unknown parameter: $1"
+            exit 1
+            ;;
+    esac
+done
+
+
+echo "MC_VERSION = ${MC_VERSION}"
+echo "PAPER_BUILD = ${PAPER_BUILD}"
 
 # Lowercase these to avoid 404 errors on wget
 MC_VERSION="${MC_VERSION,,}"
 PAPER_BUILD="${PAPER_BUILD,,}"
+
 
 # Get version information and build download URL and jar name
 #URL='https://papermc.io/api/v2/projects/paper'
